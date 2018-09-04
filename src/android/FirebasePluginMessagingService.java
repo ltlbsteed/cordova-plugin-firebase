@@ -78,7 +78,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             title = remoteMessage.getNotification().getTitle();
             text = remoteMessage.getNotification().getBody();
             id = remoteMessage.getMessageId();
-            sound = remoteMessage.getNotification().getSound();
+//            sound = remoteMessage.getNotification().getSound();
         } else if (data != null) {
             title = data.get("title");
             text = data.get("text");
@@ -89,6 +89,10 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             if (TextUtils.isEmpty(text)) {
                 text = data.get("body");
             }
+        }
+
+        if (data != null) {
+            sound = data.get("sound")
         }
 
         if (TextUtils.isEmpty(id)) {
