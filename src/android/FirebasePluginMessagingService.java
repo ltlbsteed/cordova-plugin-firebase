@@ -92,7 +92,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
         }
 
         if (data != null) {
-            sound = data.get("sound")
+            sound = data.get("sound");
         }
 
         if (TextUtils.isEmpty(id)) {
