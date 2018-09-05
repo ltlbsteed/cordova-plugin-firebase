@@ -120,6 +120,14 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             bundle.putString(key, data.get(key));
         }
 
+        Log.d(TAG, "sendNotification() id: " + id);
+        Log.d(TAG, "sendNotification() title: " + title);
+        Log.d(TAG, "sendNotification() messageBody: " + messageBody);
+        Log.d(TAG, "sendNotification() data: " + data);
+        Log.d(TAG, "sendNotification() showNotification: " + showNotification);
+        Log.d(TAG, "sendNotification() sound: " + sound);
+        Log.d(TAG, "sendNotification() lights: " + lights);
+
         if (showNotification) {
             Intent intent = new Intent(this, OnNotificationOpenReceiver.class);
             intent.putExtras(bundle);
